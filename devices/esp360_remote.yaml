@@ -1,0 +1,3 @@
+packages:
+  identity: github://asucrews/esphome-configs/packages/identity.yaml@main
+  board:    github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main

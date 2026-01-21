@@ -1,0 +1,7 @@
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: ${timezone}
+    servers:
+      - ${ntp_server}
+    update_interval: 480min

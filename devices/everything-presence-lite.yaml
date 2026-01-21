@@ -1,5 +1,5 @@
 packages:
   upstream_epl: github://everythingsmarthome/everything-presence-lite/everything-presence-lite-ha.yaml@main
-  house_api:    github://asucrews/esphome-configs/packages/house_api.yaml
-  house_wifi:   github://asucrews/esphome-configs/packages/house_wifi.yaml
-  house_time:   github://asucrews/esphome-configs//packages/house_time_phoenix.yaml
+  house_api:    github://asucrews/esphome-configs/packages/house_api.yaml@main
+  house_wifi:   github://asucrews/esphome-configs/packages/house_wifi.yaml@main
+  house_time:   github://asucrews/esphome-configs/packages/house_time_phoenix.yaml@main

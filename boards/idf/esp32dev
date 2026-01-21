@@ -1,0 +1,14 @@
+esphome:
+  name: "${device_name}"
+  friendly_name: "${device_friendly_name}"
+  area: "${area}"
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+preferences:
+  flash_write_interval: 1min
+
+logger:

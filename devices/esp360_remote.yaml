@@ -1,3 +1,7 @@
 packages:
   identity: github://asucrews/esphome-configs/packages/identity.yaml@main
-  board:    github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main
+  board: github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main
+  api: github://asucrews/esphome-configs/packages/api.yaml@main
+  ota: github://asucrews/esphome-config/packages/ota.yaml@main
+  wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
+  time: github://asucrews/esphome-configs/packages/time.yaml@main

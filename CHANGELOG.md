@@ -4,7 +4,14 @@ All notable changes to this repo are documented here.
 Last updated: 2026-01-22
 
 ## Unreleased
-_No changes yet._
+### Added
+- Code of Conduct.
+- Security policy.
+
+### Changed
+- Link Code of Conduct and Security policy from README and CONTRIBUTING.
+- Add validation scope guidance to CONTRIBUTING.
+- Add a security contact handle.
 
 ## 2026-01-22
 ### Added

@@ -17,6 +17,7 @@ Last updated: 2026-01-22
 - Replace fixed SHTCx 0x70 offsets with adjustable template numbers and humidity clamping.
 - Disable WiFi power save mode by default.
 - Disable identity package reference in everything_presence_lite device config.
+- Mark SHTCx offset numbers as config entities and fix filter indentation.
 
 ## 2026-01-22
 ### Added

@@ -5,10 +5,10 @@ sensor:
     temperature:
       name: "Temperature"
       filters:
-              - median:
-                  window_size: 5
-                  send_every: 1
-              - lambda: return x + id(temp_offset).state;
+        - median:
+            window_size: 5
+            send_every: 1
+        - lambda: return x + id(temp_offset).state;
     humidity:
       name: "Humidity"
       filters:
@@ -26,6 +26,7 @@ number:
     name: "Temperature Offset"
     id: temp_offset
     icon: "mdi:calculator"
+    entity_category: config
     unit_of_measurement: "°C"
     min_value: -20
     max_value: 20
@@ -38,6 +39,7 @@ number:
     name: "Humidity Offset"
     id: hum_offset
     icon: "mdi:water-percent"
+    entity_category: config
     unit_of_measurement: "%"
     min_value: -20
     max_value: 20

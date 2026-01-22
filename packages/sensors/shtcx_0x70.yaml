@@ -1,0 +1,18 @@
+sensor:
+  - platform: shtcx
+    address: 0x70
+    update_interval: 60s
+    temperature:
+      name: "Temperature"
+      filters:
+        - median:
+            window_size: 5
+            send_every: 1
+        - offset: -3.7
+    humidity:
+      name: "Humidity"
+      filters:
+        - median:
+            window_size: 5
+            send_every: 1
+        - offset: 19.1

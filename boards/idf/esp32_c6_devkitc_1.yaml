@@ -1,5 +1,5 @@
 esp32:
-  board: esp32-c6-devkitc-1
+  board: seeed_xiao_esp32_c6
   variant: esp32c6
   flash_size: 4MB
   framework:

@@ -4,4 +4,5 @@ packages:
   api: github://asucrews/esphome-configs/packages/api.yaml@main
   ota: github://asucrews/esphome-config/packages/ota.yaml@main
   wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
+  common: ithub://asucrews/esphome-configs/packages/common.yaml@main
   time: github://asucrews/esphome-configs/packages/time.yaml@main

@@ -8,7 +8,7 @@ sensor:
         - median:
             window_size: 5
             send_every: 1
-        - offset: -8.3
+        - offset: -5.3
     humidity:
       name: "Humidity"
       filters:

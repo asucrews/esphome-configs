@@ -13,6 +13,7 @@ Last updated: 2026-01-22
 - Link Code of Conduct and Security policy from README and CONTRIBUTING.
 - Add validation scope guidance to CONTRIBUTING.
 - Add a security contact handle.
+- Disable MAC suffix naming in identity packages.
 
 ## 2026-01-22
 ### Added

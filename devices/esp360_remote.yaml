@@ -20,14 +20,3 @@ globals:
     type: bool
     restore_value: no
     initial_value: 'false'
-
-output:
-  - platform: gpio
-    pin: GPIO12
-    id: status_led_output
-
-light:
-  - platform: binary
-    id: status_led_light
-    name: "Status LED"
-    output: status_led_output

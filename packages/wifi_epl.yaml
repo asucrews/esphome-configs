@@ -1,0 +1,11 @@
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  use_address: ${wifi_ip_address}
+  min_auth_mode: ${wifi_auth_mode}
+  power_save_mode: NONE
+  ap:
+    ssid: "${friendly_name}"
+    password: !secret ap_password
+
+captive_portal:

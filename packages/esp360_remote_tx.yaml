@@ -1,0 +1,9 @@
+remote_transmitter:
+  - id: RF_TX
+    pin: ${rf_tx_pin}
+    carrier_duty_percent: 100%
+    non_blocking: true
+  - id: ${ir_tx_pin}
+    pin: GPIO13
+    carrier_duty_percent: 50%
+    non_blocking: true

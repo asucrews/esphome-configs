@@ -2,6 +2,7 @@ packages:
   identity: github://asucrews/esphome-configs/packages/identity.yaml@main
   board: github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main
   api: github://asucrews/esphome-configs/packages/api.yaml@main
+  api_services: github://asucrews/esphome-configs/packages/api_services/remote_tx.yaml@main
   ota: github://asucrews/esphome-configs/packages/ota.yaml@main
   wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
   common: github://asucrews/esphome-configs/packages/common.yaml@main
@@ -50,41 +51,6 @@ remote_transmitter:
     carrier_duty_percent: 50%
     non_blocking: true
 
-api:
-  services:
-    - service: send_rf_rc_switch_raw
-      variables:
-        protocol_number: int
-        raw_data: string
-      then:
-        - remote_transmitter.transmit_rc_switch_raw:
-            transmitter_id: RF_TX
-            protocol: !lambda 'return esphome::remote_base::RC_SWITCH_PROTOCOLS[protocol_number];'
-            code: !lambda 'return raw_data;'
-
-    - service: send_ir_raw
-      variables:
-        command: int[]
-      then:
-        - remote_transmitter.transmit_raw:
-            transmitter_id: IR_TX
-            code: !lambda |-
-              std::vector<long> out;
-              out.reserve(command.size());
-              for (auto v : command) out.push_back((long)v);
-              return out;
-
-    - service: send_rf_raw
-      variables:
-        command: int[]
-      then:
-        - remote_transmitter.transmit_raw:
-            transmitter_id: RF_TX
-            code: !lambda |-
-              std::vector<long> out;
-              out.reserve(command.size());
-              for (auto v : command) out.push_back((long)v);
-              return out;
 
 output:
   - platform: gpio

@@ -7,6 +7,7 @@ Last updated: 2026-01-22
 ### Added
 - Code of Conduct.
 - Security policy.
+- Weekly GitHub Actions snapshot workflow (tags + releases).
 
 ### Changed
 - Link Code of Conduct and Security policy from README and CONTRIBUTING.

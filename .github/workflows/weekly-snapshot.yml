@@ -1,0 +1,42 @@
+name: Weekly snapshot
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create and push tag
+        id: tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="v$(date -u +%Y.%m.%d)"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+          if git rev-parse "refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "Tag already exists: $TAG"
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git tag -a "$TAG" -m "Snapshot $TAG"
+          git push origin "$TAG"
+
+      - name: Create release
+        if: steps.tag.outputs.exists != 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Snapshot ${{ steps.tag.outputs.tag }}
+          body: "Automated weekly snapshot."

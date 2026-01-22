@@ -3,9 +3,13 @@
 All notable changes to this repo are documented here.
 
 ## Unreleased
+_No changes yet._
+
+## 2026-01-22
 ### Added
 - Expanded README coverage for boards, devices, and packages.
 - Device template and contribution guidance.
+- Changelog and contribution guide.
 
 ### Changed
 - Document that secrets live in ESPHome `secrets.yaml` (not this repo).

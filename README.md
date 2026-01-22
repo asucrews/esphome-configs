@@ -54,6 +54,7 @@ Core:
 - `packages/api.yaml` - encrypted ESPHome API.
 - `packages/ota.yaml` - OTA password.
 - `packages/wifi.yaml` - WiFi + captive portal.
+- `packages/wifi_epl.yaml` - WiFi for Everything Presence Lite (no power save, AP SSID uses `friendly_name`).
 - `packages/common.yaml` - uptime, WiFi signal, internal temp, restart buttons.
 - `packages/time.yaml` - SNTP time sync.
 
@@ -65,7 +66,7 @@ Optional:
 - `packages/i2c_bus_a.yaml` - I2C bus definition.
 - `packages/status_led.yaml` - status LED output/light.
 - `packages/sensors/bh1750_0x23.yaml` - BH1750 lux.
-- `packages/sensors/shtcx_0x70.yaml` - SHTCx temperature/humidity.
+- `packages/sensors/shtcx_0x70.yaml` - SHTCx temperature/humidity with adjustable offsets.
 - `packages/esp360_remote_tx.yaml` - RF/IR transmitter pins.
 - `packages/esp360_remote_rx.yaml` - RF receiver (IR example commented).
 - `packages/api_services/remote_tx.yaml` - API services to send RF/IR.
@@ -73,7 +74,7 @@ Optional:
 ## Device configs
 - `devices/template.yaml` - starter template for new devices.
 - `devices/ratgdo-v25i.yaml` - ratgdo v2.5i.
-- `devices/everything_presence_lite.yaml` - Everything Presence Lite.
+- `devices/everything_presence_lite.yaml` - Everything Presence Lite (upstream config + `wifi_epl`).
 - `devices/esp360_remote.yaml` - ESP360 remote hub (RF/IR).
 - `devices/ble_tracker_c3.yaml` - BLE tracker on ESP32-C3.
 - `devices/ble_tracker_c6.yaml` - BLE tracker on ESP32-C6.
@@ -86,8 +87,9 @@ Set these in your device YAML (or in a shared file you include).
 | `device_name` | `packages/identity.yaml`, `packages/identity_dio.yaml` | ESPHome node name. |
 | `device_friendly_name` | `packages/identity.yaml`, `packages/identity_dio.yaml` | Friendly name in HA. |
 | `area` | `packages/identity.yaml`, `packages/identity_dio.yaml` | HA area assignment. |
-| `wifi_ip_address` | `packages/wifi.yaml` | Static or DHCP target IP. |
-| `wifi_auth_mode` | `packages/wifi.yaml` | Minimum WiFi auth mode. |
+| `friendly_name` | `packages/wifi_epl.yaml` | Fallback AP SSID for EPL. |
+| `wifi_ip_address` | `packages/wifi.yaml`, `packages/wifi_epl.yaml` | Static or DHCP target IP. |
+| `wifi_auth_mode` | `packages/wifi.yaml`, `packages/wifi_epl.yaml` | Minimum WiFi auth mode. |
 | `timezone` | `packages/time.yaml` | Time zone string. |
 | `ntp_server` | `packages/time.yaml` | NTP server host. |
 | `i2c_sda_pin` | `packages/i2c_bus_a.yaml` | I2C SDA pin. |
@@ -108,9 +110,9 @@ are not stored in this repo):
 
 | Secret | Used by | Purpose |
 | --- | --- | --- |
-| `wifi_ssid` | `packages/wifi.yaml` | WiFi SSID. |
-| `wifi_password` | `packages/wifi.yaml` | WiFi password. |
-| `ap_password` | `packages/wifi.yaml` | Fallback AP password. |
+| `wifi_ssid` | `packages/wifi.yaml`, `packages/wifi_epl.yaml` | WiFi SSID. |
+| `wifi_password` | `packages/wifi.yaml`, `packages/wifi_epl.yaml` | WiFi password. |
+| `ap_password` | `packages/wifi.yaml`, `packages/wifi_epl.yaml` | Fallback AP password. |
 | `api_encryption_key` | `packages/api.yaml` | ESPHome API encryption key. |
 | `ota_password` | `packages/ota.yaml` | OTA password. |
 

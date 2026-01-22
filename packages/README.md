@@ -30,6 +30,7 @@ Core:
 - `packages/api.yaml` - encrypted ESPHome API.
 - `packages/ota.yaml` - OTA password.
 - `packages/wifi.yaml` - WiFi + captive portal.
+- `packages/wifi_epl.yaml` - WiFi for Everything Presence Lite (no power save, AP SSID uses `friendly_name`).
 - `packages/common.yaml` - uptime, WiFi signal, internal temp, restart buttons.
 - `packages/time.yaml` - SNTP time sync.
 
@@ -42,7 +43,7 @@ Connectivity:
 Sensors:
 - `packages/i2c_bus_a.yaml` - I2C bus definition.
 - `packages/sensors/bh1750_0x23.yaml` - BH1750 lux.
-- `packages/sensors/shtcx_0x70.yaml` - SHTCx temperature/humidity.
+- `packages/sensors/shtcx_0x70.yaml` - SHTCx temperature/humidity with adjustable offsets.
 
 Indicators:
 - `packages/status_led.yaml` - status LED output/light.

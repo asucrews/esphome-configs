@@ -14,3 +14,72 @@ i2c:
   scan: true
   id: bus_a
   frequency: 400kHz
+
+globals:
+  - id: ir_receiver_enabled
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+
+remote_receiver:
+  - id: RF_RX
+    pin:
+      number: GPIO5
+      inverted: false
+    dump: raw
+    tolerance: 35%
+    filter: 200us
+    idle: 4ms
+    buffer_size: 10kB
+    on_rc_switch:
+      - homeassistant.event:
+          event: esphome.rf_code_received_test
+          data:
+            protocol: !lambda 'return x.protocol;'
+            code: !lambda 'return x.code;'
+
+remote_transmitter:
+  - id: RF_TX
+    pin: GPIO18
+    carrier_duty_percent: 100%
+    non_blocking: true
+  - id: IR_TX
+    pin: GPIO13
+    carrier_duty_percent: 50%
+    non_blocking: true
+
+api:
+  services:
+    - service: send_rf_rc_switch_raw
+      variables:
+        protocol_number: int
+        raw_data: string
+      then:
+        - remote_transmitter.transmit_rc_switch_raw:
+            transmitter_id: RF_TX
+            protocol: !lambda 'return esphome::remote_base::RC_SWITCH_PROTOCOLS[protocol_number];'
+            code: !lambda 'return raw_data;'
+
+    - service: send_ir_raw
+      variables:
+        command: int[]
+      then:
+        - remote_transmitter.transmit_raw:
+            transmitter_id: IR_TX
+            code: !lambda |-
+              std::vector<long> out;
+              out.reserve(command.size());
+              for (auto v : command) out.push_back((long)v);
+              return out;
+
+    - service: send_rf_raw
+      variables:
+        command: int[]
+      then:
+        - remote_transmitter.transmit_raw:
+            transmitter_id: RF_TX
+            code: !lambda |-
+              std::vector<long> out;
+              out.reserve(command.size());
+              for (auto v : command) out.push_back((long)v);
+              return out;

@@ -1,6 +1,6 @@
 packages:
   identity_dio: github://asucrews/esphome-configs/packages/identity.yaml@main
-  board: github://asucrews/esphome-configs/boards/idf/esp32_c6_devkitc_1.yaml@main
+  board: github://asucrews/esphome-configs/boards/idf/esp32_c3_devkitc_1.yaml@main
   api: github://asucrews/esphome-configs/packages/api.yaml@main
   api_ble_tracker: github://asucrews/esphome-configs/packages/api_ble_tracker.yaml@main
   #ota: github://asucrews/esphome-configs/packages/ota.yaml@main

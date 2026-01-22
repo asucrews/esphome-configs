@@ -69,11 +69,6 @@ text_sensor:
     dns_address:
       name: ESP DNS Address
 
-  - platform: debug
-    reset_reason:
-      name: "Reset Reason"
-      entity_category: diagnostic
-
 binary_sensor:
   - platform: status
     name: "Node Status"

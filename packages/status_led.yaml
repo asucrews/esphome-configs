@@ -1,0 +1,4 @@
+output:
+  - platform: gpio
+    pin: ${status_led_pin} GPIO12
+    id: status_led_output

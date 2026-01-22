@@ -2,55 +2,23 @@ packages:
   identity: github://asucrews/esphome-configs/packages/identity.yaml@main
   board: github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main
   api: github://asucrews/esphome-configs/packages/api.yaml@main
-  api_services: github://asucrews/esphome-configs/packages/api_services/remote_tx.yaml@main
+  api_services_remote_tx: github://asucrews/esphome-configs/packages/api_services/remote_tx.yaml@main
   ota: github://asucrews/esphome-configs/packages/ota.yaml@main
   wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
   common: github://asucrews/esphome-configs/packages/common.yaml@main
   ble_proxy: github://asucrews/esphome-configs/packages/ble_proxy.yaml@main
+  i2c_bus:  github://asucrews/esphome-configs/packages/i2c_bus_a.yaml@main
   bh1750: github://asucrews/esphome-configs/packages/sensors/bh1750_0x23.yaml@main
   shtcx: github://asucrews/esphome-configs/packages/sensors/shtcx_0x70.yaml@main
+  esp360_remote_rx: github://asucrews/esphome-configs/packages/esp360_remote_rx.yaml@main
+  esp360_remote_tx: github://asucrews/esphome-configs/packages/esp360_remote_tx.yaml@main
   time: github://asucrews/esphome-configs/packages/time.yaml@main
-
-i2c:
-  sda: 21
-  scl: 22
-  scan: true
-  id: bus_a
-  frequency: 400kHz
 
 globals:
   - id: ir_receiver_enabled
     type: bool
     restore_value: no
     initial_value: 'false'
-
-remote_receiver:
-  - id: RF_RX
-    pin:
-      number: GPIO5
-      inverted: false
-    dump: raw
-    tolerance: 35%
-    filter: 200us
-    idle: 4ms
-    buffer_size: 10kB
-    on_rc_switch:
-      - homeassistant.event:
-          event: esphome.rf_code_received_test
-          data:
-            protocol: !lambda 'return x.protocol;'
-            code: !lambda 'return x.code;'
-
-remote_transmitter:
-  - id: RF_TX
-    pin: GPIO18
-    carrier_duty_percent: 100%
-    non_blocking: true
-  - id: IR_TX
-    pin: GPIO13
-    carrier_duty_percent: 50%
-    non_blocking: true
-
 
 output:
   - platform: gpio

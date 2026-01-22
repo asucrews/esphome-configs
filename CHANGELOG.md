@@ -14,6 +14,9 @@ Last updated: 2026-01-22
 - Add validation scope guidance to CONTRIBUTING.
 - Add a security contact handle.
 - Disable MAC suffix naming in identity packages.
+- Adjust SHTCx 0x70 temperature offset calibration.
+- Disable WiFi power save mode by default.
+- Disable identity package reference in everything_presence_lite device config.
 
 ## 2026-01-22
 ### Added

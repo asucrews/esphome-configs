@@ -1,6 +1,6 @@
 packages:
   identity: github://asucrews/esphome-configs/packages/identity.yaml@main
-  board: github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main
+  board: github://asucrews/esphome-configs/boards/idf/esp32dev@main
   api: github://asucrews/esphome-configs/packages/api.yaml@main
   api_services_remote_tx: github://asucrews/esphome-configs/packages/api_services/remote_tx.yaml@main
   ota: github://asucrews/esphome-configs/packages/ota.yaml@main

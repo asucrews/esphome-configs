@@ -1,5 +1,5 @@
 esp32:
-  board: eeed_xiao_esp32c3
+  board: seeed_xiao_esp32c3
   variant: esp32c3
   flash_size: 4MB
   framework:

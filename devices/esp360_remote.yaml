@@ -2,7 +2,7 @@ packages:
   identity: github://asucrews/esphome-configs/packages/identity.yaml@main
   board: github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main
   api: github://asucrews/esphome-configs/packages/api.yaml@main
-  ota: github://asucrews/esphome-config/packages/ota.yaml@main
+  ota: github://asucrews/esphome-configs/packages/ota.yaml@main
   wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
   common: github://asucrews/esphome-configs/packages/common.yaml@main
   ble_proxy: github://asucrews/esphome-configs/packages/ble_proxy.yaml@main

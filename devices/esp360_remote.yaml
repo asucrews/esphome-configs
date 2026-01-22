@@ -83,3 +83,14 @@ api:
               out.reserve(command.size());
               for (auto v : command) out.push_back((long)v);
               return out;
+
+output:
+  - platform: gpio
+    pin: GPIO12
+    id: status_led_output
+
+light:
+  - platform: binary
+    id: status_led_light
+    name: "Status LED"
+    output: status_led_output

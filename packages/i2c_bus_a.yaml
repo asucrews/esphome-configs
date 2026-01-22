@@ -3,4 +3,4 @@ i2c:
   scl: ${i2c_sda_pin}
   scan: true
   id: bus_a
-  frequency: ${i2c_freguency}
+  frequency: ${i2c_frequency}

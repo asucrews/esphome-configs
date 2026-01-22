@@ -1,0 +1,11 @@
+sensor:
+  - platform: bh1750
+    name: "BH1750 Illuminance"
+    address: 0x23
+    update_interval: 5s
+    filters:
+      - median:
+          window_size: 5
+      - round: 2
+      - multiply: 7.5
+      - delta: 5%

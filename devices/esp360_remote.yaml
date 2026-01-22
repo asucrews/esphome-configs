@@ -6,6 +6,8 @@ packages:
   wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
   common: github://asucrews/esphome-configs/packages/common.yaml@main
   ble_proxy: github://asucrews/esphome-configs/packages/ble_proxy.yaml@main
+  bh1750: github://asucrews/esphome-configs/packages/sensors/bh1750_0x23.yaml@main
+  shtcx: github://asucrews/esphome-configs/packages/sensors/shtcx_0x70.yaml@main
   time: github://asucrews/esphome-configs/packages/time.yaml@main
 
 i2c:

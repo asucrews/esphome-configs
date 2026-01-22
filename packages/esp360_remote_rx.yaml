@@ -1,7 +1,7 @@
 remote_receiver:
   - id: RF_RX
     pin:
-      number: GPIO5
+      number: ${rf_rx_pin}
       inverted: false
     dump: raw
     tolerance: 35%
@@ -16,7 +16,7 @@ remote_receiver:
             code: !lambda 'return x.code;'
   # - id: IR_RX
   #   pin:
-  #     number: GPIO19
+  #     number: ${ir_rx_pin}
   #     inverted: true
   #     mode:
   #       input: true

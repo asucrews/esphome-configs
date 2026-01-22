@@ -2,3 +2,4 @@ esphome:
   name: "${device_name}"
   friendly_name: "${device_friendly_name}"
   area: "${area}"
+  name_add_mac_suffix: false

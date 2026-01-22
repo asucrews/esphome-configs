@@ -1,0 +1,57 @@
+safe_mode:
+
+# Diagnostics / basics
+text_sensor:
+  - platform: version
+    name: "ESPHome Version"
+    hide_timestamp: true
+  - platform: wifi_info
+    ip_address:
+      name: "ESP IP Address"
+    ssid:
+      name: "ESP Connected SSID"
+    bssid:
+      name: "ESP Connected BSSID"
+    mac_address:
+      name: "ESP Mac Wifi Address"
+    scan_results:
+      name: "ESP Latest Scan Results"
+
+binary_sensor:
+  - platform: status
+    id: system_status
+    name: "Node Status"
+    trigger_on_initial_state: true
+
+button:
+  - platform: restart
+    id: restart_button
+    name: "Restart"
+    entity_category: config
+  - platform: safe_mode
+    id: safe_mode_button
+    name: "Safe Mode Boot"
+    entity_category: config
+  - platform: factory_reset
+    id: reset_button
+    name: "Restart with Factory Default Settings"
+    entity_category: config
+
+sensor:
+  - platform: wifi_signal
+    id: wifi_signal_sensor
+    name: "WiFi Signal"
+    entity_category: diagnostic
+
+  - platform: copy
+    source_id: wifi_signal_sensor
+    name: "WiFi Signal Percent"
+    unit_of_measurement: "%"
+    entity_category: diagnostic
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+
+  - platform: uptime
+    id: uptime_sensor
+    name: "Uptime"
+    entity_category: diagnostic

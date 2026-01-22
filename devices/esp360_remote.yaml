@@ -4,5 +4,13 @@ packages:
   api: github://asucrews/esphome-configs/packages/api.yaml@main
   ota: github://asucrews/esphome-config/packages/ota.yaml@main
   wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
-  common: ithub://asucrews/esphome-configs/packages/common.yaml@main
+  common: github://asucrews/esphome-configs/packages/common.yaml@main
+  ble_proxy: github://asucrews/esphome-configs/packages/ble_proxy.yaml@main
   time: github://asucrews/esphome-configs/packages/time.yaml@main
+
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+  id: bus_a
+  frequency: 400kHz

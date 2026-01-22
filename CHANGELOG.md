@@ -1,6 +1,7 @@
 # Changelog
 
 All notable changes to this repo are documented here.
+Last updated: 2026-01-22
 
 ## Unreleased
 _No changes yet._

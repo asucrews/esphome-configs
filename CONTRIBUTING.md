@@ -10,6 +10,11 @@ to reuse and share.
 - Document new packages/boards in their respective README.
 - Avoid committing secrets; keep them in ESPHome `secrets.yaml`.
 
+## Validation scope
+- For any change to `packages/`, `boards/`, or `devices/`, run
+  `esphome config <device.yaml>` for at least one affected device.
+- If you change substitutions or secrets, update `README.md` tables.
+
 ## Adding a package
 1. Create the YAML in `packages/`.
 2. Add any required substitutions or secrets to `README.md`.
@@ -25,3 +30,9 @@ to reuse and share.
 1. Copy `devices/template.yaml` and fill in substitutions.
 2. Reference shared packages whenever possible.
 3. Add the device to `devices/README.md`.
+
+## Code of Conduct
+See `CODE_OF_CONDUCT.md`.
+
+## Security
+See `SECURITY.md` for responsible disclosure.

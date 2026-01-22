@@ -136,6 +136,12 @@ Checklist:
 ## Contributing
 See `CONTRIBUTING.md`.
 
+## Code of Conduct
+See `CODE_OF_CONDUCT.md`.
+
+## Security
+See `SECURITY.md`.
+
 ## Changelog
 See `CHANGELOG.md`.
 

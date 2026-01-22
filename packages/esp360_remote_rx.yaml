@@ -1,0 +1,56 @@
+remote_receiver:
+  - id: RF_RX
+    pin:
+      number: GPIO5
+      inverted: false
+    dump: raw
+    tolerance: 35%
+    filter: 200us
+    idle: 4ms
+    buffer_size: 10kB
+    on_rc_switch:
+      - homeassistant.event:
+          event: esphome.rf_code_received_test
+          data:
+            protocol: !lambda 'return x.protocol;'
+            code: !lambda 'return x.code;'
+  # - id: IR_RX
+  #   pin:
+  #     number: GPIO19
+  #     inverted: true
+  #     mode:
+  #       input: true
+  #       pullup: true
+  #   dump: raw
+  #   on_raw:
+  #     - homeassistant.event:
+  #         event: esphome.ir_raw_code_received
+  #         data:
+  #           code: !lambda |-
+  #             // Copy then reverse so we don't mutate a const reference
+  #             auto v = x;
+  #             std::reverse(v.begin(), v.end());
+  #             std::string out = "[";
+  #             for (size_t i = 0; i < v.size(); i++) {
+  #               out += std::to_string(v[i]);
+  #               if (i + 1 < v.size()) out += ", ";
+  #             }
+  #             out += "]";
+  #             return out;
+  #   on_pronto:
+  #     - homeassistant.event:
+  #         event: esphome.ir_pronto_code_received
+  #         data:
+  #           code: !lambda 'return x.data;'
+  #   on_lg:
+  #     - homeassistant.event:
+  #         event: esphome.ir_lg_code_received
+  #         data:
+  #           data: !lambda 'return x.data;'
+  #           nbits: !lambda 'return x.nbits;'
+  #   on_panasonic:
+  #     - homeassistant.event:
+  #         event: esphome.ir_panasonic_code_received
+  #         data:
+  #           address: !lambda 'return x.address;'
+  #           command: !lambda 'return x.command;'

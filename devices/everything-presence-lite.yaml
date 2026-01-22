@@ -1,5 +1,6 @@
 packages:
+  identity: github://asucrews/esphome-configs/packages/identity.yaml@main
   upstream_epl: github://everythingsmarthome/everything-presence-lite/everything-presence-lite-ha.yaml@main
-  api:    github://asucrews/esphome-configs/packages/api.yaml@main
-  wifi:   github://asucrews/esphome-configs/packages/wifi.yaml@main
-  time:   github://asucrews/esphome-configs/packages/time.yaml@main
+  api: github://asucrews/esphome-configs/packages/api.yaml@main
+  wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
+  time: github://asucrews/esphome-configs/packages/time.yaml@main

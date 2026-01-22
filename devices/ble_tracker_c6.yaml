@@ -1,0 +1,74 @@
+packages:
+  identity: github://asucrews/esphome-configs/packages/identity.yaml@main
+  board: github://asucrews/esphome-configs/boards/idf/esp32_c6_devkitc_1.yaml@main
+  api: github://asucrews/esphome-configs/packages/api.yaml@main
+  api_ble_tracker: github://asucrews/esphome-configs/packages/api_ble_tracker.yaml@main
+  #ota: github://asucrews/esphome-configs/packages/ota.yaml@main
+  wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
+  common: github://asucrews/esphome-configs/packages/common.yaml@main
+  ble: github://asucrews/esphome-configs/packages/ble.yaml@main
+  ble_proxy: github://asucrews/esphome-configs/packages/ble_proxy.yaml@main
+  ble_tracker: github://asucrews/esphome-configs/packages/ble_tracker.yaml@main
+
+ota:
+  - platform: esphome
+    password: "f038ea0647a40905df672fe7b34edc19"
+
+binary_sensor:
+  - platform: ble_presence
+    ibeacon_uuid: "b305e72d-6dbf-e214-0dce-b28cfd80b409"
+    name: "Jeremy's Car Tag iBeacon"
+    id: jeremy_car_tag
+    timeout: 30s
+
+  - platform: ble_presence
+    ibeacon_uuid: "c9237cbb-7949-4103-b0a7-27dd404d9749"
+    name: "Lan's Car Tag iBeacon"
+    id: lan_car_tag
+    timeout: 30s
+
+  - platform: ble_presence
+    ibeacon_uuid: "62894adf-1dea-4d6c-bf8a-f3efc2967b8c"
+    name: "Leo's Car Tag iBeacon"
+    id: leo_car_tag
+    timeout: 30s
+
+  - platform: ble_presence
+    ibeacon_uuid: "190cbf0a-2db4-49f2-a2d0-7d84707e919d"
+    name: "Jeremy's P7P iBeacon"
+    id: jeremy_p7p_tag
+    timeout: 30s
+
+  - platform: ble_presence
+    ibeacon_uuid: "040f7175-632b-4634-9c35-e9074a145bc5"
+    name: "BBP Family Room 1 iBeacon"
+    id: family_room_beacon
+    timeout: 30s
+
+  - platform: ble_presence
+    ibeacon_uuid: "9cf982b5-53a0-3073-1864-727110ffdb88"
+    name: "BBP Garage 1 iBeacon"
+    id: garage_beacon
+    timeout: 30s
+
+  - platform: ble_presence
+    ibeacon_uuid: "a44a3e33-459f-3971-bd53-a2c0ca0ebd31"
+    name: "BBP Kitchen 1 iBeacon"
+    id: kitchen_beacon
+    timeout: 30s
+
+  - platform: template
+    name: "C6 Test Any Tag Present"
+    id: c6_any_tag_present
+    device_class: occupancy
+    entity_category: diagnostic
+    lambda: |-
+      return (
+        id(jeremy_car_tag).state ||
+        id(lan_car_tag).state ||
+        id(leo_car_tag).state ||
+        id(jeremy_p7p_tag).state ||
+        id(family_room_beacon).state ||
+        id(garage_beacon).state ||
+        id(kitchen_beacon).state
+      );

@@ -1,0 +1,5 @@
+esp32_ble_beacon:
+  type: iBeacon
+  uuid:  ${ble_uuid}
+  major: ${ble_major}
+  minor: ${ble_minor}

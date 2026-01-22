@@ -1,0 +1,23 @@
+esp32:
+  board: esp32-c6-devkitc-1
+  variant: esp32c6
+  flash_size: 4MB
+  framework:
+    type: esp-idf
+    sdkconfig_options:
+      CONFIG_ESPTOOLPY_FLASHSIZE_4MB: y
+      CONFIG_ESPTOOLPY_FLASHMODE_DIO: y
+      CONFIG_BT_ENABLED: y
+      CONFIG_BT_BLE_42_FEATURES_SUPPORTED: y
+      CONFIG_BT_BLE_50_FEATURES_SUPPORTED: y
+      CONFIG_OPENTHREAD_ENABLED: n
+      CONFIG_ESP_COEX_ENABLED: y
+      CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ: "160"
+      CONFIG_ESP_TASK_WDT_TIMEOUT_S: "10"
+      CONFIG_ESP_SYSTEM_PANIC_PRINT_REBOOT: y
+
+logger:
+  hardware_uart: USB_SERIAL_JTAG
+
+preferences:
+  flash_write_interval: 1min

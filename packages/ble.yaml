@@ -1,0 +1,3 @@
+esp32_ble:
+  id: ble
+  max_connections: 5

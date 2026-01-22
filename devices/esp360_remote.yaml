@@ -12,6 +12,7 @@ packages:
   shtcx: github://asucrews/esphome-configs/packages/sensors/shtcx_0x70.yaml@main
   esp360_remote_rx: github://asucrews/esphome-configs/packages/esp360_remote_rx.yaml@main
   esp360_remote_tx: github://asucrews/esphome-configs/packages/esp360_remote_tx.yaml@main
+  status_led: https://github.com/asucrews/esphome-configs/packages/status_led.yaml@main
   time: github://asucrews/esphome-configs/packages/time.yaml@main
 
 globals:

@@ -1,0 +1,17 @@
+substitutions:
+  device_name: "device_name"
+  device_friendly_name: "Device Friendly Name"
+  area: "Area Name"
+  wifi_ip_address: "192.168.1.50"
+  wifi_auth_mode: "WPA2_PSK"
+  timezone: "America/Chicago"
+  ntp_server: "pool.ntp.org"
+
+packages:
+  identity: github://asucrews/esphome-configs/packages/identity.yaml@main
+  board: github://asucrews/esphome-configs/boards/idf/esp32dev.yaml@main
+  api: github://asucrews/esphome-configs/packages/api.yaml@main
+  ota: github://asucrews/esphome-configs/packages/ota.yaml@main
+  wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
+  common: github://asucrews/esphome-configs/packages/common.yaml@main
+  time: github://asucrews/esphome-configs/packages/time.yaml@main

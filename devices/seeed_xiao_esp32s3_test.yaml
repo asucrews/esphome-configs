@@ -8,7 +8,7 @@ substitutions:
   ntp_server: "pool.ntp.org"
 
 packages:
-  identity: github://asucrews/esphome-configs/packages/identity.yaml@main
+  identity: github://asucrews/esphome-configs/packages/identity_dio.yaml@main
   board: github://asucrews/esphome-configs/boards/idf/esp32_s3_seeed_xiao.yaml@main
   api: github://asucrews/esphome-configs/packages/api.yaml@main
   ota: github://asucrews/esphome-configs/packages/ota.yaml@main

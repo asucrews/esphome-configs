@@ -1,6 +1,7 @@
 esp32:
   board: seeed_xiao_esp32s3
   variant: ESP32S3
+  flash_size: 16MB
   framework:
     type: esp-idf
     sdkconfig_options:
@@ -26,8 +27,6 @@ esp32:
 
       # --- Watchdog (helps avoid false WDT resets on busy nodes) ---
       CONFIG_ESP_TASK_WDT_TIMEOUT_S: "30"
-  platformio_options:
-    board_build.flash_size: 16MB
 
 logger:
   hardware_uart: USB_SERIAL_JTAG

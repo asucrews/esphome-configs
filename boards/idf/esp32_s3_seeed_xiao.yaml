@@ -2,6 +2,8 @@ esp32:
   board: seeed_xiao_esp32s3
   variant: ESP32S3
   flash_size: 16MB
+  platformio_options:
+    board_build.flash_size: 16MB
   framework:
     type: esp-idf
     sdkconfig_options:

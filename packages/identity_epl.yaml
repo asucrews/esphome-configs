@@ -1,0 +1,3 @@
+esphome:
+  area: "${area}"
+  name_add_mac_suffix: false

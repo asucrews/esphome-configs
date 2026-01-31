@@ -2,14 +2,19 @@ esp32:
   board: seeed_xiao_esp32s3
   variant: ESP32S3
   flash_size: 16MB
-  platformio_options:
-    board_build.flash_size: 16MB
   framework:
     type: esp-idf
     sdkconfig_options:
       # --- PSRAM (8MB) ---
       CONFIG_SPIRAM: y
       CONFIG_SPIRAM_SUPPORT: y
+      CONFIG_SPIRAM_BOOT_INIT: y
+      CONFIG_SPIRAM_USE_MALLOC: y
+      # --- IMPORTANT: R8 PSRAM is OCTAL / OPI, not QUAD ---
+      CONFIG_SPIRAM_MODE_OCT: y
+      CONFIG_SPIRAM_SPEED_80M: y
+      # (optional safety) explicitly disable quad
+      CONFIG_SPIRAM_MODE_QUAD: n
 
       # USB Serial/JTAG console
       CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG: y

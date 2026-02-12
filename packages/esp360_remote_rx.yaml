@@ -9,7 +9,7 @@ remote_receiver:
     filter: 200us
     idle: 4ms
     buffer_size: 10kB
-    on_rc_switch:
+    on_pronto:
       - homeassistant.event:
           event: esphome.rf_code_received
           data:

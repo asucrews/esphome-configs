@@ -4,12 +4,12 @@ remote_receiver:
       number: ${rf_rx_pin}
       inverted: false
     dump: 
-      - pronto
+      - rc_switch
     tolerance: 35%
     filter: 200us
     idle: 4ms
     buffer_size: 10kB
-    on_pronto:
+    on_rc_switch:
       - homeassistant.event:
           event: esphome.rf_code_received
           data:

@@ -1,21 +1,21 @@
 remote_receiver:
-  - id: rf_rx
+  - id: RF_RX
     pin:
       number: ${rf_rx_pin}
       inverted: false
-    dump:
+    dump: 
       - rc_switch
+      - raw
     tolerance: 35%
     filter: 200us
     idle: 4ms
     buffer_size: 10kB
-
     on_rc_switch:
       - homeassistant.event:
           event: esphome.rf_code_received
           data:
-            protocol: !lambda "return x.protocol;"
-            code: !lambda "return x.code;"
+            protocol: !lambda 'return x.protocol;'
+            code: !lambda 'return x.code;'
   # - id: IR_RX
   #   pin:
   #     number: ${ir_rx_pin}

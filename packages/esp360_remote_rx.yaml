@@ -3,18 +3,14 @@ remote_receiver:
     pin:
       number: ${rf_rx_pin}
       inverted: false
-    dump: 
+      mode: INPUT_PULLUP  # try if signal looks noisy/floating
+    dump:
       - rc_switch
-    tolerance: 35%
-    filter: 200us
-    idle: 4ms
-    buffer_size: 10kB
-    on_rc_switch:
-      - homeassistant.event:
-          event: esphome.rf_code_received
-          data:
-            protocol: !lambda 'return x.protocol;'
-            code: !lambda 'return x.code;'
+      - raw              # add this while testing
+    tolerance: 60%
+    filter: 50us
+    idle: 10ms
+    buffer_size: 10240
   # - id: IR_RX
   #   pin:
   #     number: ${ir_rx_pin}

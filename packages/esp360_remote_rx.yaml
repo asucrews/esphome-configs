@@ -11,6 +11,11 @@ remote_receiver:
     filter: 50us
     idle: 10ms
     buffer_size: 10240
+    on_rcswitch:
+      - homeassistant.event:
+        event: esphome.rfrx_rcswitch
+        data:
+          message: Button was pressed
   # - id: IR_RX
   #   pin:
   #     number: ${ir_rx_pin}

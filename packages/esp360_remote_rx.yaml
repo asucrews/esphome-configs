@@ -3,7 +3,7 @@ remote_receiver:
     pin:
       number: ${rf_rx_pin}
       inverted: false
-    dump: raw
+    dump: rc_switch
     tolerance: 35%
     filter: 200us
     idle: 4ms

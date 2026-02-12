@@ -4,8 +4,7 @@ remote_receiver:
       number: ${rf_rx_pin}
       inverted: false
     dump: 
-      - rc_switch
-      - raw
+      - pronto
     tolerance: 35%
     filter: 200us
     idle: 4ms

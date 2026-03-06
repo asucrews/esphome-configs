@@ -1,4 +1,6 @@
 api:
+  encryption:
+    key: !secret api_encryption_key
   services:
     - service: send_rf_rc_switch_raw
       variables:

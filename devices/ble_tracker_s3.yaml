@@ -1,0 +1,12 @@
+packages:
+  identity: github://asucrews/esphome-configs/packages/identity_dio.yaml@main
+  board: github://asucrews/esphome-configs/boards/idf/esp32_s3_seeed_xiao.yaml@main
+  api: github://asucrews/esphome-configs/packages/api.yaml@main
+  api_ble_tracker: github://asucrews/esphome-configs/packages/api_ble_tracker.yaml@main
+  ota: github://asucrews/esphome-configs/packages/ota.yaml@main
+  wifi: github://asucrews/esphome-configs/packages/wifi.yaml@main
+  common: github://asucrews/esphome-configs/packages/common.yaml@main
+  time: github://asucrews/esphome-configs/packages/time.yaml@main
+  ble: github://asucrews/esphome-configs/packages/ble.yaml@main
+  ble_proxy: github://asucrews/esphome-configs/packages/ble_proxy.yaml@main
+  ble_tracker: github://asucrews/esphome-configs/packages/ble_tracker.yaml@main

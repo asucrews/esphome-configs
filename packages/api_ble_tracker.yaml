@@ -1,4 +1,6 @@
 api:
+  encryption:
+    key: !secret api_encryption_key
   on_client_connected:
     - esp32_ble_tracker.start_scan:
         continuous: true
@@ -8,4 +10,5 @@ api:
         not:
           api.connected:
       then:
+
         - esp32_ble_tracker.stop_scan:

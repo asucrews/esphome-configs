@@ -28,6 +28,7 @@ api:
       then:
         - remote_transmitter.transmit_raw:
             transmitter_id: RF_TX
+            carrier_frequency: 0Hz
             code: !lambda |-
               std::vector<int32_t> out;
               out.reserve(command.size());

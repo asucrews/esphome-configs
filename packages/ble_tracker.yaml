@@ -1,5 +1,6 @@
-esp32_ble_beacon:
-  type: iBeacon
-  uuid:  ${ble_uuid}
-  major: ${ble_major}
-  minor: ${ble_minor}
+esp32_ble_tracker:
+  scan_parameters:
+    continuous: false
+    active: false
+    interval: 320ms
+    window: 290ms

@@ -8,5 +8,6 @@ packages:
   ble: github://asucrews/esphome-configs/packages/ble.yaml@main
   ble_proxy: github://asucrews/esphome-configs/packages/ble_proxy.yaml@main
   ble_tracker: github://asucrews/esphome-configs/packages/ble_tracker.yaml@main
+  ble_beacon: github://asucrews/esphome-configs/packages/ble_beacon.yaml@main
 
 

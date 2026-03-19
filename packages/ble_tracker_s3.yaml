@@ -2,7 +2,7 @@ esp32_ble_tracker:
   scan_parameters:
     continuous: true
     active: false
-    interval: 320ms
+    interval: 100ms
     window: 320ms
 
 bluetooth_proxy:

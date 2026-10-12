@@ -1,0 +1,22 @@
+infrared:
+  # IR transmitter instance
+  # - platform: ir_rf_proxy
+  #   name: IR Proxy Transmitter
+  #   id: ir_proxy_tx
+  #   remote_transmitter_id: IR_TX
+  # RF receiver instance
+- platform: ir_rf_proxy
+  name: RF Proxy Receiver
+  id: rf_proxy_rx
+  remote_receiver_id: RF_RX
+  # RF transmitter instance
+- platform: ir_rf_proxy
+  name: RF Proxy Transmitter
+  id: rf_proxy_tx
+  remote_transmitter_id: RF_TX
+  frequency: 433
+  # IR receiver instance
+  # - platform: ir_rf_proxy
+  #   name: IR Proxy Receiver
+  #   id: ir_proxy_rx
+  #   remote_receiver_id: IR_RX

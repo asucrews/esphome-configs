@@ -20,3 +20,15 @@ infrared:
   #   name: IR Proxy Receiver
   #   id: ir_proxy_rx
   #   remote_receiver_id: IR_RX
+
+# Radio Frequency platform — creates radio_frequency entities
+radio_frequency:
+  - platform: ir_rf_proxy
+    name: "RF Proxy Transmitter"
+    frequency: 433.92MHz
+    remote_transmitter_id: RF_TX
+
+  - platform: ir_rf_proxy
+    name: "RF Proxy Receiver"
+    frequency: 433.92MHz
+    remote_receiver_id: RF_RX
